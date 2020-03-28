@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Sat Mar 28 2020 16:29:09 GMT+0800 (中国标准时间)
+------------------------------------------------------
+
+Modified files:
+
+
+Created files:
+* .autogit/autogit.json
+
+
+Deleted files:
+
+
+Renamed files:

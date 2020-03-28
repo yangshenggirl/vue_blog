@@ -60,10 +60,11 @@ export default {
     methods:{
         post:function(){
             var that = this
-            this.$axios.post('https://jsonplaceholder.typicode.com/posts',{
+            // this.$axios.post('https://jsonplaceholder.typicode.com/posts',{
+            this.$axios.post('https://my-vuedemo.firebaseio.com/posts.json',{
                 title:this.blog.title,
-                body:this.blog.content,
-                userId:1
+                content:this.blog.content,
+                // userId:1
             })
             .then(function(data){
                 that.submmited = true
