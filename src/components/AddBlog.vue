@@ -61,13 +61,7 @@ export default {
         post:function(){
             var that = this
             // this.$axios.post('https://jsonplaceholder.typicode.com/posts',{
-            this.$axios.post('https://my-vuedemo-bc07d.firebaseio.com/posts.json',this.blog
-            // {
-            //     title:this.blog.title,
-            //     content:this.blog.content,
-            //     userId:1
-            // }
-            )
+            this.$axios.post('https://my-vuedemo-bc07d.firebaseio.com/posts.json',this.blog)
             .then(function(data){
                 that.submmited = true
             })
