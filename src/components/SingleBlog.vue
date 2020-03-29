@@ -1,7 +1,13 @@
 <template>
   <div id="single-blog">
     <h1>{{blog.title}}</h1>
-    <article>{{blog.body}}</article>
+    <article>{{blog.content}}</article>
+    <p>作者:{{blog.author}}</p>
+    <ul>
+      <li v-for='(category,index) in blog.categories' :key='index'>
+        {{category}}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -16,10 +22,11 @@ export default {
   },
   created(){
       var that = this
-      this.$axios.get('https://jsonplaceholder.typicode.com/posts/'
-      + this.id)
+      // this.$axios.get('https://jsonplaceholder.typicode.com/posts/'
+      this.$axios.get('https://my-vuedemo-bc07d.firebaseio.com/posts/'
+      + this.id +'.json')
       .then(function(data){
-        //   console.log(data)
+        console.log(data)
         that.blog = data.data;
       })
   }

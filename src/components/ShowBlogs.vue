@@ -6,7 +6,7 @@
        <router-link :to="'/blog/' + blog.id">
            <h2 v-rainbow>{{blog.title | to-upperCase}}</h2>
        </router-link> 
-        <article>{{blog.body | snippet}}</article>
+        <article>{{blog.content | snippet}}</article>
     </div>
   </div>
 </template>
@@ -21,14 +21,27 @@ export default {
     }
   },
   created(){
-      var that = this
-      //本地json文件只能放在static文件中
-      this.$axios.get('./../static/posts.json')
-      .then(function(data){
-        //   console.log(data)
-        that.blogs = data.data.slice(0,10);
-        console.log(that.blogs)
-      })
+    var that = this
+    //本地json文件只能放在static文件中
+    // this.$axios.get('./../static/posts.json')
+    this.$axios.get('https://my-vuedemo-bc07d.firebaseio.com/posts.json')
+    .then(function(data){
+      console.log(data)
+      console.log(data.data)
+      return data.data
+      // that.blogs = data.data.slice(0,10);
+      // console.log(that.blogs)
+    })
+    .then(function(data){
+      var blogsArray = []
+      for(let key in data){
+        console.log(data[key])
+        data[key].id = key
+        blogsArray.push(data[key])
+      }
+      console.log(blogsArray)
+      that.blogs = blogsArray
+    })
   },
   computed:{
       filteredBlogs:function(){
