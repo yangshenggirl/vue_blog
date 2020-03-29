@@ -21,14 +21,14 @@ export default {
     }
   },
   created(){
-      var that = this
-      // this.$axios.get('https://jsonplaceholder.typicode.com/posts/'
-      this.$axios.get('https://my-vuedemo-bc07d.firebaseio.com/posts/'
-      + this.id +'.json')
-      .then(function(data){
-        console.log(data)
-        that.blog = data.data;
-      })
+    var that = this
+    // this.$axios.get('https://jsonplaceholder.typicode.com/posts/'
+    this.$axios.get('https://my-vuedemo-bc07d.firebaseio.com/posts/'
+    + this.id +'.json')
+    .then(function(data){
+      console.log(data)
+      that.blog = data.data;
+    })
   }
 }
 </script>
