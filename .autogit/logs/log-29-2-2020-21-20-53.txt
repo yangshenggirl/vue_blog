@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Sun Mar 29 2020 21:20:53 GMT+0800 (中国标准时间)
+------------------------------------------------------
+
+Modified files:
+* src/components/AddBlog.vue
+
+
+Created files:
+* .autogit/logs/log-29-2-2020-20-50-46.txt
+
+
+Deleted files:
+
+
+Renamed files:
